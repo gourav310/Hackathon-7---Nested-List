@@ -163,7 +163,12 @@ export default function State(props){
   function ShowCitiName(props){
     const [town,settown]= useState(false);
     function showTowns(){
+      if(town){
+        settown(false)
+      }
+     else{ setciti(true)
       settown(true);
+    }
     }
    
     
@@ -219,7 +224,10 @@ export default function State(props){
     }
   }
   const showCities = ()=>{
-    setciti(true);
+    if(citi){
+      setciti(false);
+    }
+    else{setciti(true);}
    // console.log(citi)
   }
 
