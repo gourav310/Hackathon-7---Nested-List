@@ -173,7 +173,7 @@ export default function State(props){
     
     if(town){
       const array= props.array.towns;
-      console.log(array);
+      //console.log(array);
     return <>{array.map((town,key)=>(<div key={key} className={`town${key+1}`}>{town.name}</div>))}</>
     }else{
       return null;
