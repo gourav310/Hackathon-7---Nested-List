@@ -174,14 +174,14 @@ export default function State(props){
     if(town){
       const array= props.array.towns;
       //console.log(array);
-    return <>{array.map((town,key)=>(<li key={key} className={`town${key+1}`}><div  className={`town${key+1}`}>{town.name}</div></li>))}</>
+    return <>{array.map((town,key)=>(<li key={key} className={`town${key+1}`} className={`town${key+1}`}>{town.name}</li>))}</>
     }else{
       return null;
     }
   }
   
        
-    return (<li className={`city${props.idx+1}`}><button className={`city${props.idx+1}`} onClick={showTowns}>{props.citiName.name}</button>
+    return (<li className={`city${props.idx+1}`} className={`city${props.idx+1}`} onClick={showTowns}>{props.citiName.name}
    <ol> <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/></ol>
     </li>)
   }
@@ -223,7 +223,7 @@ export default function State(props){
    // console.log(citi)
   }
 
-    return (<li className={`state${props.idx+1}`}> <button onClick={showCities} className={`state${props.idx+1}`}>{props.statename.name}</button>
+    return (<li className={`state${props.idx+1}`}  onClick={showCities}> {props.statename.name}
     <ShowCiti state={props.statename.name}/>
     </li>)
 
