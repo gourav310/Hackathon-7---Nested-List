@@ -223,7 +223,7 @@ export default function State(props){
    // console.log(citi)
   }
 
-    return (<li><button onClick={showCities} className={`state${props.idx+1}`}>{props.statename.name}</button><br></br>
+    return (<li className={`state${props.idx+1}`}> <button onClick={showCities} className={`state${props.idx+1}`}>{props.statename.name}</button>
     <ShowCiti state={props.statename.name}/>
     </li>)
 
