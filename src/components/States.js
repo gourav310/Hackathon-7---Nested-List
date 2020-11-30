@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+// import ShowTowns from './ShowTowns'
 import './../styles/cssState.css';
 const states = [
     {
@@ -156,51 +157,58 @@ const states = [
 export default function State(props){
 
   const [citi,setciti]= useState(false);
-  const [town,settown]= useState(false);
-  function showTowns(){
-    settown(true);
-  }
+  
+  
+  
+  function ShowCitiName(props){
+    const [town,settown]= useState(false);
+    function showTowns(){
+      settown(true);
+    }
+   
+    
   function ShowTowns(props){
     // console.log(props.citieee)
     // console.log(props.array)
     
     if(town){
-      props.array.map((ct,key)=>{if(ct===props.citieee){
-        return(<li></li>)
-      }})
+      const array= props.array.towns;
+      console.log(array);
+    return <>{array.map((town,key)=>(<div key={key} className={`town${key+1}`}>{town.name}</div>))}</>
     }else{
       return null;
     }
   }
-  function ShowCitiName(props){
+  
+       
     return (<li className={`city${props.idx+1}`}><button className={`city${props.idx+1}`} onClick={showTowns}>{props.citiName.name}</button>
-    <ShowTowns citieee={props.citiName.name} array={props.citiName}/>
+    <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/>
     </li>)
   }
 
   function ShowCiti(props){
     const stateName = props.state;
-    console.log(stateName);
+   // console.log(stateName);
     if(citi){
       if(stateName==="Madhya Pradesh"){
         const cities = states[0].cities;
-       console.log(cities)
-      return <ol>{cities.map((citieee,idx) => (<ShowCitiName idx={idx} key={idx} citiName={citieee}/>))}</ol>
+      // console.log(cities)
+      return <ol>{cities.map((citieee,idx) => (<ShowCitiName idx={idx} stateName={stateName} key={idx} citiName={citieee}/>))}</ol>
       }
       else if(stateName==="Jharkhand"){
         const cities = states[1].cities;
        
-        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} citiName={citieee}/>))}</ol>
+        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
       }
       else if(stateName==="Assam"){
         const cities = states[2].cities;
         
-        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} citiName={citieee}/>))}</ol>
+        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
       }
       else if(stateName==="Bihar"){
         const cities = states[3].cities;
         
-        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} citiName={citieee}/>))}</ol>
+        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
       }
       else{
         return null;
