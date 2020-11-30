@@ -174,15 +174,15 @@ export default function State(props){
     if(town){
       const array= props.array.towns;
       //console.log(array);
-    return <>{array.map((town,key)=>(<li key={key} className={`town${key+1}`} className={`town${key+1}`}>{town.name}</li>))}</>
+    return (<ol> {array.map((town,idx)=>(<li key={idx}  className={`town${idx+1}`} >{town.name}</li>))}</ol>)
     }else{
       return null;
     }
   }
   
        
-    return (<li className={`city${props.idx+1}`} className={`city${props.idx+1}`} onClick={showTowns}>{props.citiName.name}
-   <ol> <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/></ol>
+    return (<li className={`city${props.idx+1}`}  onClick={showTowns}>{props.citiName.name}
+   <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/>
     </li>)
   }
 
@@ -198,17 +198,17 @@ export default function State(props){
       else if(stateName==="Jharkhand"){
         const cities = states[1].cities;
        
-        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
+        return <ol>{cities.map((citieee,idx) => (<ShowCitiName  idx={idx} key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
       }
       else if(stateName==="Assam"){
         const cities = states[2].cities;
         
-        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
+        return <ol>{cities.map((citieee,idx) => (<ShowCitiName idx={idx} key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
       }
       else if(stateName==="Bihar"){
         const cities = states[3].cities;
         
-        return <ol>{cities.map((citieee,idx) => (<ShowCitiName key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
+        return <ol>{cities.map((citieee,idx) => (<ShowCitiName  idx={idx} key={idx} stateName={stateName}  citiName={citieee}/>))}</ol>
       }
       else{
         return null;
