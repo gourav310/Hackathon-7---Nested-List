@@ -155,7 +155,7 @@ const states = [
 ];
 
 function App() {
-return <div id="main">{states.map((state,idx)=>(<State key={idx} idx={idx} statename={state} />))}</div>;
+return <div id="main"><ol>{states.map((state,idx)=>(<State key={idx} idx={idx} statename={state} />))}</ol></div>;
 }
 
 export default App;

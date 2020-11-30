@@ -174,7 +174,7 @@ export default function State(props){
     if(town){
       const array= props.array.towns;
       //console.log(array);
-    return <>{array.map((town,key)=>(<div key={key} className={`town${key+1}`}>{town.name}</div>))}</>
+    return <>{array.map((town,key)=>(<li key={key} className={`town${key+1}`}><div  className={`town${key+1}`}>{town.name}</div></li>))}</>
     }else{
       return null;
     }
@@ -182,7 +182,7 @@ export default function State(props){
   
        
     return (<li className={`city${props.idx+1}`}><button className={`city${props.idx+1}`} onClick={showTowns}>{props.citiName.name}</button>
-    <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/>
+   <ol> <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/></ol>
     </li>)
   }
 
@@ -223,8 +223,8 @@ export default function State(props){
    // console.log(citi)
   }
 
-    return (<><button onClick={showCities} className={`state${props.idx+1}`}>{props.statename.name}</button><br></br>
+    return (<li><button onClick={showCities} className={`state${props.idx+1}`}>{props.statename.name}</button><br></br>
     <ShowCiti state={props.statename.name}/>
-    </>)
+    </li>)
 
 }
