@@ -157,7 +157,7 @@ const states = [
 export default function State(props){
 
   const [citi,setciti]= useState(false);
-  
+
   
   
   function ShowCitiName(props){
@@ -186,9 +186,9 @@ export default function State(props){
   }
   
        
-    return (<li className={`city${props.idx+1}`}  onClick={showTowns}>{props.citiName.name}
+    return (<><li className={`city${props.idx+1}`}  onClick={showTowns}>{props.citiName.name}</li>
    <ShowTowns  stateName={props.stateName}  citieee={props.citiName.name} array={props.citiName}/>
-    </li>)
+    </>)
   }
 
   function ShowCiti(props){
@@ -225,14 +225,14 @@ export default function State(props){
   }
   const showCities = ()=>{
     if(citi){
-      setciti(false);
+      setciti(false)
     }
     else{setciti(true);}
    // console.log(citi)
   }
 
-    return (<li className={`state${props.idx+1}`}  onClick={showCities}> {props.statename.name}
+    return (<><li className={`state${props.idx+1}`}  onClick={showCities}> {props.statename.name}</li>
     <ShowCiti state={props.statename.name}/>
-    </li>)
+    </>)
 
 }
